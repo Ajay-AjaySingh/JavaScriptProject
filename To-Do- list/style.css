@@ -1,0 +1,66 @@
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.todo-container{
+    background-color: white;
+    box-shadow: 0 0 10px rgb(224, 221, 221);
+    border-radius: 10px;
+    width:400px;
+    padding: 20px;
+
+}
+h1{
+    text-align: center;
+}
+#todoInput{
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(223, 218, 218);
+}
+.addBtn{
+    background-color: green;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+ul{
+    padding: 20px;
+    width: calc(100%-22px);
+    /* background-color: beige; */
+}
+ul li{
+    display: flex;
+    justify-content:space-between;
+    list-style: none;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+button{
+    background-color: red;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
