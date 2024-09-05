@@ -1,0 +1,33 @@
+.color-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 150px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin-right: 3px;
+}
+.red{
+    background-color: red;
+    /* border: none; */
+}
+.green{
+    background-color: green;
+    /* border: none; */
+}
+.blue{
+    background-color: blue;
+    /* border: none; */
+}
+.yellow{
+    background-color: yellow;
+    /* border: none; */
+}
