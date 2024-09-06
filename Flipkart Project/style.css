@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(97, 156, 179);
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+}
+
+.search-bar input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 2px 0 0 2px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: darkorange;
+}
+
+.login-btn button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: #2874f0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.login-btn button:hover {
+    background-color: #f1f1f1;
+}
+
+.more {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.more a {
+    color: white;
+    text-decoration: none;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cart img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.cart-text {
+    margin-right: 5px;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+/* Container Section  */
+.container{
+    display: flex;
+}
+.product-cart{
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid white;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 5px;
+}
+.product-image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.product-tittle{
+font-size: 18px;
+margin: 12px 0;
+color: gray;
+}
+.product-price{
+font-size: 16px;
+color: orangered;
+margin: 8px 0;
+}
+
+.product-button{
+    background-color: darkorange;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+}
