@@ -1,4 +1,22 @@
-export const cart=[];
+export let cart=JSON.parse(localStorage.getItem("cart"));
+
+if(!cart){
+    cart=[
+        {
+            productId:"pro1",
+            quantity:2
+        }
+    ];
+}
+
+
+
+
+
+function saveToStorage(){
+    localStorage.setItem("cart",JSON.stringify(cart));
+}
+
 
  export function addToCart(productId,selectedQuantity,productPrice){
 
@@ -20,4 +38,5 @@ export const cart=[];
         price: productPrice
         });
     }
+    saveToStorage();
 }

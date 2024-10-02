@@ -6,7 +6,7 @@ products.forEach(product => {
     <div class="product-cart">
         <img src="${product.image}" alt="" class="product-image">
     
-        <h2 class="product-title">${product.title}</h2>
+        <P class="product-title">${product.title}</P>
     
         <p class="product-price">${product.price}</p>
     
