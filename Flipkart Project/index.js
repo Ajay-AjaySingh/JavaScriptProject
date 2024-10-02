@@ -1,4 +1,4 @@
-import { cart } from "./data/cart.js";
+import { cart,addToCart } from "./data/cart.js";
 import { products } from "./data/products.js";
 
 products.forEach(product => {
@@ -29,6 +29,20 @@ products.forEach(product => {
     document.querySelector(".container").innerHTML += cartHtml;
 });
 
+
+
+function updateCart(){
+
+    let cartQuentity=0;
+
+    cart.forEach((item)=>{
+        cartQuentity+=item.quantity;
+    })
+
+    document.querySelector(".cart-quantity").textContent=cartQuentity;
+}
+
+
 // Event listener for Add to Cart buttons
 document.querySelectorAll(".js-add-button").forEach(button => {
     button.addEventListener("click", () => {
@@ -40,35 +54,13 @@ document.querySelectorAll(".js-add-button").forEach(button => {
         const selectedQuantity =parseInt(quantitySelect.value);
 
 
-        // to check product is already added or not if added just increasing the quentity else add the product in the cart
-        let matching;
-        cart.forEach((item)=>{
-            if(productId===item.productId){
-                matching=item;
-            }
-        });
+        addToCart(productId,selectedQuantity,productPrice);
+        
+        updateCart();
 
-        if(matching){
-            matching.quantity+=selectedQuantity;
-        }else{
-             // Add the product with selected quantity to the cart
-            cart.push({
-            productId: productId,
-            quantity: selectedQuantity,
-            price: productPrice
-            });
-        }
+       
 
-
-        let cartQuentity=0;
-        cart.forEach((item)=>{
-            cartQuentity+=item.quantity;
-        })
-
-
-        document.querySelector(".cart-quantity").textContent=cartQuentity;
-
-        console.log(cartQuentity);
-        console.log(cart); // Output the cart to see the updated items
+        // console.log(cartQuentity);
+        // console.log(cart); // Output the cart to see the updated items
     });
 });
