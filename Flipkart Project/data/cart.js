@@ -37,3 +37,15 @@ function saveToStorage(){
     }
     saveToStorage();
 }
+
+export function removeFromCart(productId){
+    const newCart=[];
+
+    cart.forEach((cartItem)=>{
+        if(cart.productId!==productId){
+            newCart.push(cartItem);
+        }
+    });
+
+    cart=newCart;
+}

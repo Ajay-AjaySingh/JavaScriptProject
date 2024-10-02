@@ -1,4 +1,4 @@
-import { cart } from "./data/cart.js";
+import { cart, removeFromCart } from "./data/cart.js";
 import { products } from "./data/products.js";
 
 
@@ -19,7 +19,8 @@ cart.forEach((cartItem,index)=>{
 
 cartSummeryHTML+=
     `
-         <div class="product-container">
+         <div class="product-container 
+         js-cart-item-container-${matching.id}">
                 <div class="section1">
                     <img src="${matching.image}" alt="T-Shirt">
                 </div>
@@ -29,7 +30,9 @@ cartSummeryHTML+=
                     <p>Seller XYZ Pvt Ltd</p>
                     <p>&#x20B9; <span>${matching.price}</span></p>
                     <p>quantity: ${cart[index].quantity} 
-                    <span><button class="remove">Remove</button></span></p>
+                    <span><button class="remove js-remove-link"
+                    data-product-id=${matching.id}
+                    >Remove</button></span></p>
                     
                 </div>
                 <div class="section3">
@@ -41,4 +44,15 @@ cartSummeryHTML+=
 })
 
 document.querySelector(".container1").innerHTML=cartSummeryHTML;
+
+document.querySelectorAll(".js-remove-link").forEach((link)=>{
+    link.addEventListener("click",()=>{
+       const productId=link.dataset.productId;
+        removeFromCart(productId);
+
+      const container =  document.querySelector(`.js-cart-item-container-${productId}`);
+        console.log(container);
+        container.remove();
+    });
+});
 
