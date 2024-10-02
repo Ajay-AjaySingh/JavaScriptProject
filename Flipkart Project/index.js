@@ -40,7 +40,20 @@ function updateCart(){
     })
 
     document.querySelector(".cart-quantity").textContent=cartQuentity;
+
+    localStorage.setItem("cartQuentity",cartQuentity);
+
 }
+
+function loadCartQuentity(){
+    const savedCartQuentity=localStorage.getItem("cartQuentity");
+    if(savedCartQuentity){
+        document.querySelector(".cart-quantity").textContent=savedCartQuentity;
+    }else{
+        document.querySelector(".cart-quantity").textContent=0;
+    }
+}
+
 
 
 // Event listener for Add to Cart buttons
@@ -59,8 +72,9 @@ document.querySelectorAll(".js-add-button").forEach(button => {
         updateCart();
 
        
-
         // console.log(cartQuentity);
         // console.log(cart); // Output the cart to see the updated items
     });
 });
+
+loadCartQuentity();
