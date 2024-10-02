@@ -1,4 +1,4 @@
-const products = [
+export const products = [
     {
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqaUx796j3oN9x9DvyJBsy85Mf1-GICToxTA&s',
         title: 'Sample Product 1',
